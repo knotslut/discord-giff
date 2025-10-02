@@ -1,0 +1,13 @@
+services:
+  discord-bot:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - APP_ID=${APP_ID}
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - PUBLIC_KEY=${PUBLIC_KEY}
+      - PORT=3000
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
